@@ -17,3 +17,5 @@ if __name__ == '__main__':
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 
 Lukáš Kůs Neumí PHP
+
+Tak tohle je ten GitHub jooo?!
