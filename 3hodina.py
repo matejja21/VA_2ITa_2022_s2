@@ -1,5 +1,3 @@
-print("Cvičení")
-
 
 def uloha_1(n):
     for i in range(n):
@@ -59,6 +57,7 @@ def uloha_5(n):
 
 def uloha_6(n):
     num = 1
+    space_before = ""
     for i in range(n):
         space_before = i + 1
         print(" " * (n - space_before), "#" * num, sep="")
@@ -71,13 +70,63 @@ def uloha_6(n):
         space_before = space_before - 1
 
 
-def uloha_7(n):
+def uloha_7(r):
+    diameter = r * 2
+    radius = diameter / 2 - .5
+    r = (radius + .25) ** 2 + 1
+    for i in range(diameter):
+        line = ''
+        y = (i - radius) ** 2
+        for j in range(diameter):
+            x = (j - radius) ** 2
+            if x + y <= r:
+                line = line + '#'
+            else:
+                line = line + '*'
+        print(line)
+
+
+def uloha_8(n):
     for i in range(n):
-        fill = n- i
-        space = n - fill
+        if (i % 2) == 0:
+            start = "#"
+        else:
+            start = "*"
+
+        current = start
+        line = ""
+        for j in range(n):
+            line = line + current
+            if current == "#":
+                current = "*"
+            elif current == "*":
+                current = "#"
+        print(line)
 
 
+def uloha_9(n, m):
+    start = "#"
+    for i in range(n):
+        current = start
+        left = m
+        line = ""
+        for j in range(n):
+            if left != 0:
+                line = line + current
+                left = left - 1
+            else:
+                if current == "#":
+                    current = "*"
+                    line = line + current
+                elif current == "*":
+                    current = "#"
+                    line = line + current
+                left = m - 1
+        print(line)
+        if start == "#":
+            start = "*"
+        elif start == "*":
+            start = "#"
 
 
-
-uloha_6(6)
+uloha_7(20)
