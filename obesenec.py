@@ -10,11 +10,13 @@ Obesenec
 import random
 from os import system, name
 
+
 def clear():
     if name == 'nt':
         _ = system('cls')
     else:
         _ = system('clear')
+
 
 with open("words.txt", "r") as f:
     slova = f.read()
@@ -24,9 +26,10 @@ with open("words.txt", "r") as f:
 lehka_slova = slova[0].split(" ")
 stredni_slova = slova[1].split(" ")
 tezka_slova = slova[2].split(" ")
-stats = {"vyhry" : 0, "prohry" : 0, "uhadnute" : 0, "chybne" : 0}
+stats = {"vyhry": 0, "prohry": 0, "uhadnute": 0, "chybne": 0}
 obtiznost = 1
 game = True
+zivoty = 5
 
 while game:
     clear()
@@ -94,7 +97,7 @@ while game:
                     if pismeno == i:
                         check = True
                         count += 1
-                if check == True:
+                if check:
                     check = False
                     for i in uhadnute:
                         if pismeno == i:
@@ -105,7 +108,7 @@ while game:
                     else:
                         uhadnute.append(pismeno)
                         clear()
-                        print(pismeno, "je v hádaném slově", count,"krát")
+                        print(pismeno, "je v hádaném slově", count, "krát")
                         stats["uhadnute"] += 1
                         pocet_pismen += count
                 else:
@@ -172,14 +175,12 @@ while game:
         clear()
         print("Statistiky")
         print("  -> Vyhry/Prohry")
-        print("    -> ",stats["vyhry"],"/",stats["prohry"],sep="")
+        print("    -> ", stats["vyhry"], "/", stats["prohry"], sep="")
         print("  -> Uhadnute/Chybne")
-        print("    -> ",stats["uhadnute"],"/",stats["chybne"],sep="")
+        print("    -> ", stats["uhadnute"], "/", stats["chybne"], sep="")
         input("\npro pokračování zmáčkněte ENTER")
     elif x == "k":
         game = False
     else:
         clear()
         print("Daná možnost neexistuje!!!")
-
-
