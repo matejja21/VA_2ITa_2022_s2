@@ -32,7 +32,7 @@ game = True
 zivoty = 5
 
 while game:
-    clear()
+#    clear()
     print("########################################")
     print("###             Hangman              ###")
     print("########################################")
@@ -45,7 +45,7 @@ while game:
     x = x.lower()[0]
 
     if x == "h":
-        clear()
+#        clear()
         print("")
         print("")
         print("############ Hra začíná ###########")
@@ -62,7 +62,8 @@ while game:
             slova = tezka_slova
             zivoty = 5
         else:
-            clear()
+
+#           clear()
             print("Error: chybne nastavena obtiznost")
             gameLoop = False
 
@@ -76,13 +77,13 @@ while game:
                 uhadnute_slovo = ""
                 for i in slovo:
                     uhadnute_slovo += i
-                clear()
+#              clear()
                 print("Vyhrál jsi, hádané slovo bylo:", uhadnute_slovo)
                 stats["vyhry"] += 1
                 gameLoop = False
                 input("\n pro pokračování zmáčkněte ENTER")
             elif zivoty <= 0:
-                clear()
+#             clear()
                 print("Prohrál jsi")
                 stats["prohry"] += 1
                 gameLoop = False
@@ -103,11 +104,11 @@ while game:
                         if pismeno == i:
                             check = True
                     if check:
-                        clear()
+#                        clear()
                         print(pismeno, "jsi už hádal")
                     else:
                         uhadnute.append(pismeno)
-                        clear()
+#                        clear()
                         print(pismeno, "je v hádaném slově", count, "krát")
                         stats["uhadnute"] += 1
                         pocet_pismen += count
@@ -117,11 +118,11 @@ while game:
                         if pismeno == i:
                             check = True
                     if check:
-                        clear()
+#                        clear()
                         print(pismeno, "jsi už hádal")
                     else:
                         chybne.append(pismeno)
-                        clear()
+#                        clear()
                         print(pismeno, "se v hádaném slově nenachází")
                         stats["chybne"] += 1
                         zivoty -= 1
@@ -139,14 +140,14 @@ while game:
     elif x == "n":
         nastaveni = True
         while nastaveni:
-            clear()
+#            clear()
             print("Nastaveni:")
             print("  -> Obtížnosti (o/O)")
             print("  -> Exit (e/E)")
             x = input("=>")
             x = x.lower()[0]
             if x == "o":
-                clear()
+#                clear()
                 print("Obtížnost")
                 print("  -> Lehká (0)")
                 print("  -> Střední (1)")
@@ -172,7 +173,7 @@ while game:
             elif x == "e":
                 nastaveni = False
     elif x == "s":
-        clear()
+#        clear()
         print("Statistiky")
         print("  -> Vyhry/Prohry")
         print("    -> ", stats["vyhry"], "/", stats["prohry"], sep="")
@@ -182,5 +183,5 @@ while game:
     elif x == "k":
         game = False
     else:
-        clear()
+#        clear()
         print("Daná možnost neexistuje!!!")

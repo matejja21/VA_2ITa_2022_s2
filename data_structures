@@ -1,0 +1,17 @@
+Seznamy (list)
+    syntax ["cokoliv", "ještě něco", 153, "yL", Trues
+    ]
+
+N-tice (tuple)
+    Na rozdíl od seznamu nejde změnit
+    syntax ("Cokoliv", "ještě něco", 153, "yL", True)
+
+Množiny (set)
+    Neuspořádaná kolekce jedinečných čísel
+    Nepamatuje si pořadí hodnot, narozdíl od seznamu (při pop() se popne náhodná hodnota)
+    Když do množiny přidám hodnotu, která tam už je, tak se neduplikuje
+    syntax {"Cokoliv", "ještě něco", 153, "yL", True}
+
+Slovník (dictionary)
+    Přijde mi to jako JSON, jen s různými datovými typy
+    syntax {"klíč1" : "Cokoliv", "dalsi_klic" : "ještě něco", "klic_cislo_3" : 153, "yL" : "yL", "neco" : True}
